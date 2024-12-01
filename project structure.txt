@@ -1,0 +1,43 @@
+club-management-system/
+│
+├── public/
+│   ├── index.php            // Home page with club details and club registration
+│   ├── login.php            // Login page
+│   ├── dashboard.php        // Club member dashboard
+│   ├── events.php           // Club events page
+│   ├── register.php         // User registration page
+│   ├── club-info.php        // View club details and mission
+│   ├── register-confirm.php // Confirm member registration request
+│   └── assets/
+│       ├── styles.css       // Custom styles
+│       └── bootstrap/       // Bootstrap files
+|
+│
+├── admin/
+│   ├── index.php       // Root admin dashboard
+│   ├── manage-clubs.php// Manage clubs and club admins
+│   ├── view-users.php  // View all users
+│   └── assets/
+│       ├── styles.css
+|
+│
+├── club-admin/
+│   ├── index.php                // Club admin dashboard
+│   ├── manage-members.php       // Manage club members (CRUD)
+│   ├── manage-events.php        // Manage club events
+│   ├── view-queries.php         // View and respond to queries
+│   ├── view-registration-requests.php // View and accept/reject member registrations
+│   ├── add-member.php           // Add new members
+│   ├── edit-member.php          // Edit existing members
+│   ├── delete-member.php        // Delete a member
+│   └── assets/
+│       ├── styles.css
+|      
+│
+├── includes/
+│   ├── db.php          // Database connection
+│   ├── auth.php        // Authentication logic
+│   ├── functions.php   // Utility functions
+│
+└── sql/
+    └── database.sql    // SQL file to create the database schema

@@ -1,0 +1,15 @@
+# HOW TO CREATE THE ROOT-ADMIN USER
+
+Step 1: Hash the root admin password:
+
+Since the root admin has no register logic, you will need to manually create the record within the database.
+First hash the password using argon2 and then enter the record into the database.
+
+To hash use the command below:
+php -r "echo password_hash('root-admin-password', PASSWORD_ARGON2I);"
+
+save the hash and use it in the next step.
+
+Step 2: Enter the record into the database:
+Use the sql command below:
+INSERT INTO root_admin (username, password) VALUES ('adminuser', '$argon2id$v=19$m=65536,t=4,p=1$eW91clNhdXBsZVBhc3N3b3Jk$abcdefgh1234567890abcdef');
