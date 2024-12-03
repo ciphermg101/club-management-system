@@ -17,12 +17,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $last_name = $_POST['last_name'];
     $gender = $_POST['gender'];
     $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_ARGON2ID);  // Using Argon2ID for password hashing
     $club_name = $_POST['club_name'];
     $phone_number = $_POST['phone_number'];
     $profile_picture = $_FILES['profile_picture']['name'];
     $current_year = $_POST['current_year'];
     $school = $_POST['school'];
+    $password = $_POST['password'];  // Storing password temporarily for confirmation check
+
+    // Confirm password validation
+    $confirm_password = $_POST['confirm_password'];
+
+    if ($password !== $confirm_password) {
+        $message = "Passwords do not match!";
+    } else {
+        // Hash the password only if the passwords match
+        $password = password_hash($password, PASSWORD_ARGON2ID);  // Using Argon2ID for password hashing
+    }
 
     // File upload handling and validation
     $allowed_types = ['image/jpeg', 'image/png', 'image/gif'];
@@ -137,20 +147,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Register for the Club</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/public_styles.css">
+    <!-- Font Awesome for eye icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <!-- Hero Section -->
-    <div class="hero-section text-white text-center py-5 mb-4" style="background-color: #007bff;">
-        <h1>Register for Our Club</h1>
+    <div class="hero-section text-white text-center py-5 mb-4">
+        <h1>Register With Your Club</h1>
         <p>Become a member and be part of an exciting community!</p>
     </div>
 
     <!-- Main Registration Form -->
-    <div class="container my-5">
+    <div class="container my-5 custom-form-background">
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6">
                 <div class="card shadow-lg p-4">
-                    <div class="card-body">
+                    <div class="card-body custom-card-body">
                         <h2 class="card-title text-center mb-4">Sign Up</h2>
 
                         <?php if (isset($message)) : ?>
@@ -158,19 +170,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <?php endif; ?>
 
                         <form method="POST" enctype="multipart/form-data">
-                            <div class="form-group mb-3">
+                            <!-- First Name -->
+                            <div class="form-group mb-4">
                                 <label for="first_name">First Name</label>
                                 <input type="text" class="form-control" id="first_name" name="first_name" required>
                             </div>
-                            <div class="form-group mb-3">
+
+                            <!-- Last Name -->
+                            <div class="form-group mb-4">
                                 <label for="last_name">Last Name</label>
                                 <input type="text" class="form-control" id="last_name" name="last_name" required>
                             </div>
-                            <div class="form-group mb-3">
+
+                            <!-- Registration Number -->
+                            <div class="form-group mb-4">
                                 <label for="registration_number">Registration Number</label>
                                 <input type="text" class="form-control" id="registration_number" name="registration_number" required>
                             </div>
-                            <div class="form-group mb-3">
+
+                            <!-- Gender -->
+                            <div class="form-group mb-4">
                                 <label for="gender">Gender</label>
                                 <select class="form-control" id="gender" name="gender" required>
                                     <option value="" disabled selected>Select your gender</option>
@@ -179,32 +198,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     <option value="Other">Other</option>
                                 </select>
                             </div>
-                            <div class="form-group mb-3">
-                                <label for="email">Email Address</label>
+
+                            <!-- Email -->
+                            <div class="form-group mb-4">
+                                <label for="email">Email</label>
                                 <input type="email" class="form-control" id="email" name="email" required>
                             </div>
-                            <div class="form-group mb-3">
-                                <label for="password">Password</label>
-                                <input type="password" class="form-control" id="password" name="password" required>
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="club_name">Club</label>
+
+                            <!-- Club Name -->
+                            <div class="form-group mb-4">
+                                <label for="club_name">Select Club</label>
                                 <select class="form-control" id="club_name" name="club_name" required>
-                                    <option value="" disabled selected>Select your club</option>
-                                    <?php foreach ($clubs as $club): ?>
+                                    <option value="" disabled selected>Select a club</option>
+                                    <?php foreach ($clubs as $club) : ?>
                                         <option value="<?= htmlspecialchars($club['name']) ?>"><?= htmlspecialchars($club['name']) ?></option>
                                     <?php endforeach; ?>
                                 </select>
                             </div>
-                            <div class="form-group mb-3">
+
+                            <!-- Phone Number -->
+                            <div class="form-group mb-4">
                                 <label for="phone_number">Phone Number</label>
-                                <input type="text" class="form-control" id="phone_number" name="phone_number" required>
+                                <input type="tel" class="form-control" id="phone_number" name="phone_number" required>
                             </div>
-                            <div class="form-group mb-3">
+
+                            <!-- Profile Picture -->
+                            <div class="form-group mb-4">
                                 <label for="profile_picture">Profile Picture</label>
                                 <input type="file" class="form-control" id="profile_picture" name="profile_picture" accept="image/*">
                             </div>
-                            <div class="form-group mb-3">
+
+                            <!-- Current Year -->
+                            <div class="form-group mb-4">
                                 <label for="current_year">Current Year</label>
                                 <select class="form-control" id="current_year" name="current_year" required>
                                     <option value="" disabled selected>Select your current year</option>
@@ -215,7 +240,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     <option value="Post Graduate">Post Graduate</option>
                                 </select>
                             </div>
-                            <div class="form-group mb-3">
+
+                            <!-- School -->
+                            <div class="form-group mb-4">
                                 <label for="school">School</label>
                                 <select class="form-control" id="school" name="school" required>
                                     <option value="" disabled selected>Select your school</option>
@@ -229,7 +256,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     <option value="School of Pure and Applied Sciences (SPAS)">School of Pure and Applied Sciences (SPAS)</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-block">Register</button>
+
+                            <!-- Password -->
+                            <div class="form-group mb-4">
+                                <label for="password">Password</label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="password" name="password" required>
+                                    <div class="input-group-append">
+                                        <button type="button" id="toggle-password" class="btn btn-outline-secondary">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Confirm Password -->
+                            <div class="form-group mb-4">
+                                <label for="confirm_password">Confirm Password</label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+                                    <div class="input-group-append">
+                                        <button type="button" id="toggle-confirm-password" class="btn btn-outline-secondary">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100">Register</button>
                         </form>
                     </div>
                 </div>
@@ -237,6 +291,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
 
+    <script>
+        // Toggle password visibility
+        document.getElementById('toggle-password').addEventListener('click', function () {
+            const passwordField = document.getElementById('password');
+            const type = passwordField.type === 'password' ? 'text' : 'password';
+            passwordField.type = type;
+            this.querySelector('i').classList.toggle('fa-eye-slash');
+        });
+
+        // Toggle confirm password visibility
+        document.getElementById('toggle-confirm-password').addEventListener('click', function () {
+            const confirmPasswordField = document.getElementById('confirm_password');
+            const type = confirmPasswordField.type === 'password' ? 'text' : 'password';
+            confirmPasswordField.type = type;
+            this.querySelector('i').classList.toggle('fa-eye-slash');
+        });
+
+        // Check if passwords match
+        document.querySelector('form').addEventListener('submit', function (e) {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm_password').value;
+
+            if (password !== confirmPassword) {
+                e.preventDefault(); // Prevent form submission
+                alert('Passwords do not match! Please make sure both passwords are the same.');
+            }
+        });
+    </script>
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,9 +1,23 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+}
+
 /* Hero section styling */
 .hero-section {
     background-color: #a4c6eb;
     color: white;
     text-align: center;
     padding: 80px 0;
+}
+
+.hero-section h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.hero-section p {
+    font-size: 18px;
 }
 
 /* Footer styling */
@@ -15,7 +29,7 @@
 }
 
 .footer a {
-    color: #007bff;
+    color: #232a31;
     text-decoration: none;
     margin: 0 10px;
 }
@@ -62,4 +76,90 @@
     font-size: 2rem;
     font-weight: bold;
     color: #343a40;
+}
+
+/* Form Field Styling */
+.form-group label {
+    font-weight: bold;
+}
+
+.form-control {
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 16px;
+}
+
+.form-control:focus {
+    border-color: #2c80da;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Center Align Form */
+.container {
+    max-width: 900px;
+}
+
+.card-body {
+    padding: 40px;
+}
+
+.custom-form-background {
+    background-color: #f4fcfd;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+/* Registration Form Card */
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(17, 15, 15, 0.1);
+    border: 1px solid #ddd;
+    width: 100%;
+}
+
+.custom-card-body {
+    background-color: #a4c6eb;
+}
+
+.card-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
+
+.confirmation-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    margin-top: 50px;
+    text-align: center;
+}
+.confirmation-container h1 {
+    font-size: 2.5rem;
+    color: #28a745;
+    margin-bottom: 20px;
+}
+.confirmation-container p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+.confirmation-container .btn {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+}
+.confirmation-container i {
+    font-size: 4rem;
+    color: #28a745;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 50px 0;
+    }
+
+    .card-body {
+        padding: 30px;
+    }
 }

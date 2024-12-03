@@ -43,7 +43,7 @@ session_start();
     <!-- Main content area -->
     <div class="content">
         <div class="hero-section">
-            <h1>Welcome to Our Club</h1>
+            <h1>Welcome to the Innovation Club</h1>
             <p>Join us for exciting events, activities, and a vibrant community!</p>
             <a href="register.php" class="btn btn-lg btn-custom btn-custom-primary mt-3">Get Started</a>
         </div>
