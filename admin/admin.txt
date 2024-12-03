@@ -1,0 +1,6 @@
+username: must-admin
+password: Iam_th3_4dm1n_2025.
+
+php -r "echo password_hash('Iam_th3_4dm1n_2025.', PASSWORD_ARGON2I);"
+
+$argon2i$v=19$m=65536,t=4,p=1$YkpLaC9hbWFWOUcvWnp4dg$yVvLDyNJFQzDQiZMJ7g3JeqJOLOEXJIM3Ot1sxQdjWk

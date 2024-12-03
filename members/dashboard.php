@@ -25,7 +25,7 @@ if (isset($_GET['logout']) && $_GET['logout'] === 'true') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Dashboard</title>
     <link rel="stylesheet" href="../public/assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/members_styles.css">
     <style>
         .sidebar {
             background-color: #3C4F63FF;

@@ -1,4 +1,5 @@
 /includes/.env
 .git
 .history
-/sql/club_management_system1.sql
+/sql/club_management_system_with_Data.sql
+/public/assets/uploads

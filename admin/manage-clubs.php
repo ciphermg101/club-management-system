@@ -60,7 +60,7 @@ if (isset($_GET['delete'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Clubs</title>
     <link rel="stylesheet" href="../public/assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/admin_styles.css">
 </head>
 <body>
     <div class="container">

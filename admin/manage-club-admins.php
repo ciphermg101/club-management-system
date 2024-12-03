@@ -36,7 +36,7 @@ try {
 <head>
     <title>Manage Club Admins</title>
     <link rel="stylesheet" href="../public/assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/admin_styles.css">
 </head>
 <body>
     <div class="container">

@@ -64,7 +64,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile - Edit Personal Information</title>
     <link rel="stylesheet" href="../public/assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/members_styles.css">
     <style>
         /* Sidebar and general styles */
         .sidebar {
