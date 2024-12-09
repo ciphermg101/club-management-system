@@ -22,6 +22,9 @@
             <p>Thank you for your registration request. Our club admin will review and approve your request. You will be notified once your registration is confirmed.</p>
             <a href="index.php" class="btn btn-primary">Return to Home</a>
         </div>
+        <div class="btn">
+            <a href="index.php" class="btn btn-secondary btn-title">Back</a>
+        </div>
     </div>
 
     <script>

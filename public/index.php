@@ -35,6 +35,12 @@ session_start();
                     <li class="nav-item">
                         <a class="nav-link" href="contact.php">Contact</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../admin/root-login.php">Admin Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../club-admin/club-admin-login.php">Club Lead Login</a>
+                    </li>
                 </ul>
             </div>
         </div>

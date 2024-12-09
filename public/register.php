@@ -289,6 +289,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
             </div>
         </div>
+        <div class="btn">
+            <a href="index.php" class="btn btn-secondary btn-title">Back</a>
+        </div>
     </div>
 
     <script>

@@ -115,6 +115,9 @@ if (isset($_GET['delete'])) {
             </div>   
             <button type="submit" name="add_club" class="btn btn-success">Add Club</button>
         </form>
+        <div class="btn">
+            <a href="index.php" class="btn btn-secondary btn-title">Back</a>
+        </div>
     </div>
 </body>
 </html>

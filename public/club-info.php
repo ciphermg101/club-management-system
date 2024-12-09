@@ -22,6 +22,10 @@ session_start();
 
         <h2>Our Vision</h2>
         <p>We aim to create a thriving network of individuals who are passionate about [insert focus area], offering both educational and social experiences.</p>
+        
+        <div class="btn">
+            <a href="index.php" class="btn btn-secondary btn-title">Back</a>
+        </div>
     </div>
 </body>
 </html>

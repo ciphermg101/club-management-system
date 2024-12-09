@@ -53,6 +53,9 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <?php endif; ?>
             </tbody>
         </table>
+        <div class="btn">
+            <a href="index.php" class="btn btn-secondary btn-title">Back</a>
+        </div>
     </div>
 </body>
 </html>
