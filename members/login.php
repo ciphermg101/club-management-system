@@ -25,9 +25,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="assets/members_styles.css">
 </head>
 <body>
-    <div class="login-container">
-        <div class="login-form">
-            <h2 class="text-center">Login</h2>
+    <div class="member-login-container">
+        <div class="member-login-form">
+            <h2 class="text-center">Member Login</h2>
             <?php if (isset($error)) { echo "<div class='alert alert-danger'>$error</div>"; } ?>
             <form method="POST" action="login.php">
                 <div class="form-group">
@@ -37,6 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input type="password" name="password" placeholder="Password" required class="form-control">
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Login</button>
+                <a href="forgot-password.php" class="btn btn-link btn-block">Forgot Password?</a>
             </form>
         </div>
     </div>

@@ -6,6 +6,8 @@ require_once __DIR__ . '/envLoader.php';
 // Load the .env file
 loadEnv(__DIR__ . '/.env');
 
+date_default_timezone_set('Africa/Nairobi');  // Set the timezone globally
+
 // Access the environment variables
 $host = $_ENV['DB_HOST'];
 $db = $_ENV['DB_NAME'];

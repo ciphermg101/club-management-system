@@ -33,6 +33,9 @@ session_start();
                         <a class="nav-link" href="register.php">Join</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="../members/login.php">Login</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="contact.php">Contact</a>
                     </li>
                     <li class="nav-item">

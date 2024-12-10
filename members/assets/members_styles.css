@@ -1,34 +1,41 @@
 /* Global Styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #ceebdd;
     margin: 0;
-}
-
-/* Container with spacing and minimum height for form sections */
-.container.my-5 {
-    margin-top: 50px;  /* Space between sections */
-    margin-bottom: 50px;  /* Space between form and footer */
-    min-height: 60vh;  /* Ensure the form has a minimum height to create space */
+    padding: 0;
 }
 
 /* Form Styling for Login and other forms */
-.login-container {
+.member-login-container {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%; /* Ensure container takes up full height */
+    min-height: 100vh;
 }
 
-.login-form {
-    background-color: #ffffff;
-    padding: 60px;  /* Increase padding for more space inside the form */
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    min-width: 600px;  /* Optional: increase minimum width */
-    min-height: 400px;  /* Set a minimum height for the form */
-    height: auto;  /* Allow form height to adjust based on content */
+.email-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.email-form {
+    background-color: #97cddd;
+    padding: 80px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(92, 70, 70, 0.1);
+    max-width: 450px;
+}
+
+.member-login-form {
+    background-color: #b3dd91;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
 }
 
 .login-form h2 {
@@ -44,6 +51,15 @@ body {
     margin-bottom: 40px;  /* Increase space between input fields */
     font-size: 1.2rem;  /* Increase font size of inputs */
     border: 1px solid #ccc;
+    transition: border 0.3s ease;
+}
+
+.email-form-control {
+    border-radius: 2px;
+    padding: 8px;  /* Increase padding in input fields */
+    margin-bottom: 40px;  /* Increase space between input fields */
+    font-size: 1.4rem;  /* Increase font size of inputs */
+    border: 1px solid #131111;
     transition: border 0.3s ease;
 }
 

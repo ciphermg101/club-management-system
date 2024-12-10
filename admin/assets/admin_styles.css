@@ -1,6 +1,6 @@
 /* Custom styles for visual enhancement */
-body, html {
-    background-color: #c5f3b3;
+body {
+    background-color: #afe29a;
     font-family: 'Arial', sans-serif;
     height: 100%;
     margin: 0;
@@ -14,18 +14,15 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    min-height: 100vh;
 }
 
 .login-form {
-    background-color: #ffffff;
-    padding: 50px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 70%;
-    max-width: 600px;
-    min-width: 400px;
-    min-height: 400px;
+    background-color: hsl(0, 56%, 63%);
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
 }
 
 .login-form h2 {
@@ -163,11 +160,6 @@ body, html {
 .btn-danger:hover {
     background-color: #c82333;
     border-color: #c82333;
-}
-
-/* Spacing and Layout */
-.container {
-    margin-top: 40px;
 }
 
 .row {
